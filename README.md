@@ -1,6 +1,6 @@
 # Vanillatmosphere
 
-![Super cool logo](https://github.com/pinokaille/Vanillatmosphere/blob/main/assets/logo.png?raw=true))
+![Super cool logo](https://github.com/pinokaille/Vanillatmosphere/blob/main/assets/logo.png?raw=true)
 
 ### Why?
 I was tired of seeing so-called "vanilla" packs that often contained a lot of homebrew with unmaintained configurations so I made mine which is currently manual (I do it myself) but later I will make it automatic.
