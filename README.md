@@ -12,9 +12,8 @@ Atmosphere](https://github.com/Atmosphere-NX/Atmosphere)
 hekate](https://github.com/CTCaer/hekate)
 - [fortheusers /
 hb-appstore ](https://github.com/fortheusers/hb-appstore)
-- sigpatches from private sources
-- configs maintained by me
-
+- sigpatches
+- [configs](https://github.com/pinokaille/Vanillatmosphere/tree/main/configs)
 ### credit
 thanks to @fortheusers @CTCaer @Atmosphere-NX and @idkthenameofauthorforsigpatches 
 
