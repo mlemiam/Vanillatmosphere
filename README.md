@@ -3,8 +3,9 @@
 
 I was tired of seeing so-called "vanilla" packs that often contained a lot of homebrew with unmaintained configurations so I made mine which is currently manual (I do it myself) but later I will make it automatic.
 
-
-
+![](https://img.shields.io/github/v/release/Atmosphere-NX/Atmosphere?color=pink&label=atmosphere&style=flat-square)
+![](https://img.shields.io/github/v/release/CTCaer/Hekate?color=pink&label=hekate&style=flat-square)
+![](https://img.shields.io/github/v/release/fortheusers/hb-appstore?color=pink&label=hb-appstore&style=flat-square)
 
 ### what is in this pack?
 latest version of :
