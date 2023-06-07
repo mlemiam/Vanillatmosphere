@@ -1,0 +1,48 @@
+name: Create zip
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: check
+        uses: actions/checkout@v2
+
+      - name: install python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - name: install requirements
+        run: pip install -r requirement.txt
+
+      - name: execute script
+        run: python build.py
+
+      - name: copy configs
+        run: cp -r configs/* download/
+
+      - name: edit boot.ini
+        run: find download/ -name 'hekate_ctcaer_*.bin' -exec basename {} \; | xargs -I{} sed -i 's/<payload>/{}/g' download/boot.ini
+      
+      - name: prepare payload
+        run: find download/ -name 'hekate_ctcaer_*.bin' -exec basename {} \; | xargs -I{} cp download/{} scripts/payload.bin
+
+      - name: build boot.dat
+        run: python scripts/tx_custom_boot.py scripts/payload.bin
+
+      - name: copy boot.dat
+        run: cp boot.dat download
+
+      - name: delete shits
+        run: rm -rf download/switch/.overlays  
+      
+      - name: upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: pack-artifact
+          path: download
