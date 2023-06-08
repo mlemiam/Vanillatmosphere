@@ -1,4 +1,4 @@
-# Vanillatmosphere <img src="https://raw.githubusercontent.com/pinokaille/Vanillatmosphere/main/assets/logo.png" width="40" height="40" alt="logo">
+# Vanillatmosphere
 
 ![Super cool logo](https://github.com/pinokaille/Vanillatmosphere/blob/main/assets/banner.png?raw=true)
 
