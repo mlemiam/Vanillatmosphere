@@ -23,7 +23,7 @@ Atmosphere](https://github.com/Atmosphere-NX/Atmosphere)
 hekate](https://github.com/CTCaer/hekate)
   * boot entries (sysnand or emunand)
   * boot.ini
-  * boot.dat for modchips
+  * boot.dat for modchips (build with [this](https://github.com/mlemiam/Vanillatmosphere/blob/main/scripts/tx_custom_boot.py))
 - [ITotalJustice/sys-patch](https://github.com/ITotalJustice/sys-patch)
   * config.ini
 - [configs](https://github.com/pinokaille/Vanillatmosphere/tree/main/configs) 👆
