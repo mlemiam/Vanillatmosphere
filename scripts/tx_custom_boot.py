@@ -1,47 +1,42 @@
-# TX SX Pro Custom Payload Packer - by CTCaer 
-# Edited by mleb :p
+# TX SX Pro Custom Payload Packer - by CTCaer, edited by mleb :p
 
 import struct, hashlib, sys
-from os import unlink
 
 def sha256(data):
-	sha256 = hashlib.new('sha256')
-	sha256.update(data)
-	return sha256.digest()
+    sha256 = hashlib.sha256()
+    sha256.update(data)
+    return sha256.digest()
 
-boot_fn = 'boot.dat'
-stage2_fn = sys.argv[1]
+def pack_payload(file_path, output_file):
+    with open(file_path, "rb") as fh:
+        stage2 = bytearray(fh.read())
 
-boot = open(boot_fn, 'wb')
+    header = b"CTCaer BOOT\x00"
+    header += b"V2.5"
 
-with open(stage2_fn, 'rb') as fh:
-	stage2 = bytearray(fh.read())
-	stage2 = bytes(stage2)
+    stage2_hash = sha256(stage2)
+    header += stage2_hash
 
-header = b''
+    header += b"\x00\x00\x01\x40"
 
-header += b'\x43\x54\x43\x61\x65\x72\x20\x42\x4F\x4F\x54\x00'
+    header += struct.pack("I", len(stage2))
+    header += struct.pack("I", 0)
 
-header += b'\x56\x32\x2E\x35'
+    header += b"\x00" * 0xA4
 
-header += sha256(stage2)
+    header_hash = hashlib.sha256()
+    header_hash.update(header)
+    header += header_hash.digest()
 
-header += b'\x00\x00\x01\x40'
+    with open(output_file, "wb") as boot:
+        boot.write(header)
+        boot.write(stage2)
 
-header += struct.pack('I', len(stage2))
+if __name__ == "__main__":
+    if len(sys.argv) < 3:
+        print("Usage: python tx_custom_boot.py <input_file> <output_file>")
+        sys.exit(1)
 
-header += struct.pack('I', 0)
-
-header += b'\x00' * 0xA4
-
-sha256 = hashlib.new('sha256')
-
-sha256.update(header)
-
-header += sha256.digest()
-
-boot.write(header)
-
-boot.write(stage2)
-
-boot.close()
+    input_file = sys.argv[1]
+    output_file = sys.argv[2]
+    pack_payload(input_file, output_file)

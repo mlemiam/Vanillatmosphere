@@ -1,4 +1,4 @@
-name: Create zip
+name: Vanillatmosphere build
 
 on:
   push:
@@ -27,16 +27,17 @@ jobs:
         run: cp -r configs/* download/
 
       - name: edit boot.ini
-        run: find download/ -name 'hekate_ctcaer_*.bin' -exec basename {} \; | xargs -I{} sed -i 's/<payload>/{}/g' download/boot.ini
+        run: |
+          find download/ -name 'hekate_ctcaer_*.bin' -exec basename {} \; | 
+          xargs -I{} sed -i 's/<payload>/{}/g' download/boot.ini
       
       - name: prepare payload
-        run: find download/ -name 'hekate_ctcaer_*.bin' -exec basename {} \; | xargs -I{} cp download/{} scripts/payload.bin
+        run: |
+          find download/ -name 'hekate_ctcaer_*.bin' -exec basename {} \; | 
+          xargs -I{} cp download/{} scripts/payload.bin
 
       - name: build boot.dat
-        run: python scripts/tx_custom_boot.py scripts/payload.bin
-
-      - name: copy boot.dat
-        run: cp boot.dat download
+        run: python scripts/tx_custom_boot.py scripts/payload.bin download/boot.dat
 
       - name: delete shits
         run: rm -rf download/switch/.overlays  
