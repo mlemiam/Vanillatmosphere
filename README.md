@@ -1,5 +1,5 @@
 # Vanillatmosphere <img src="https://raw.githubusercontent.com/pinokaille/Vanillatmosphere/main/assets/logo.png" width="40" height="40" alt="logo">
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ![Super cool logo](https://github.com/pinokaille/Vanillatmosphere/blob/main/assets/banner.png?raw=true)
 
 I was tired of seeing so-called "vanilla" packs that often contained a lot of homebrew with unmaintained configurations so I made mine
@@ -9,6 +9,7 @@ I was tired of seeing so-called "vanilla" packs that often contained a lot of ho
 ![](https://img.shields.io/github/v/release/fortheusers/hb-appstore?color=pink&label=hb-appstore&style=flat-square)
 ![](https://img.shields.io/github/v/release/ITotalJustice/sys-patch?color=pink&label=sys-patch&style=flat-square)
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ### what is in this pack?
 latest version of :
