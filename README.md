@@ -11,8 +11,9 @@ I was tired of seeing so-called "vanilla" packs that often contained a lot of ho
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-### what is in this pack?
-latest version of :
+content
+=====
+**latest** version of :
 - [Atmosphere-NX /
 Atmosphere](https://github.com/Atmosphere-NX/Atmosphere)
   * 90DNS
@@ -34,7 +35,7 @@ Versions
 =====
 | Official firmware | Custom firmware | Downloads | Changelogs |
 | ------------------|-----------------| ----------| ---------- |
-| 12.0.0 - 16.0.3  | Vanillatmosphere 1.5.4 (pre-release) |[Download](https://github.com/pinokaille/Vanillatmosphere/releases/download/1.5.4-pre/Pre-Atmosphere.1.5.4.Hekate.6.0.4.zip)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.5.4) |
+| 12.0.0 - 16.0.3  | Vanillatmosphere 1.5.4 |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.5.4)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.5.4) |
 | 12.0.0 - 16.0.3  | Vanillatmosphere 1.5.3 |[Download](https://github.com/pinokaille/Vanillatmosphere/releases/download/1.5.3/Atmosphere.1.5.3.Hekate.6.0.4.zip)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.5.3) |
 
 credit
