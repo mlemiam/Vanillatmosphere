@@ -24,7 +24,7 @@ repos = [
     {
         "owner": "CTCaer",
         "repo": "hekate",
-        "file_pattern": r"^hekate_ctcaer_[0-9]+.[0-9]+.[0-9]+Nyx[0-9]+.[0-9]+.[0-9]+_v2.zip$",
+        "file_pattern": r"^hekate_ctcaer_[0-9]+\.[0-9]+\.[0-9]+_Nyx_[0-9]+\.[0-9]+\.[0-9]+(_v2)?\.zip$",
         "local_file_name": "hekate.zip",
     },
     {
