@@ -1,5 +1,3 @@
-# Vanillatmosphere
-
 ![Super cool logo](https://github.com/pinokaille/Vanillatmosphere/blob/main/assets/banner.png?raw=true)
 
 I was tired of seeing so-called "vanilla" packs that often contained a lot of homebrew with unmaintained configurations so I made mine
