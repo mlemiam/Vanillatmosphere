@@ -9,7 +9,7 @@ I was tired of seeing so-called "vanilla" packs that often contained a lot of ho
 ![](https://img.shields.io/github/v/release/fortheusers/hb-appstore?color=pink&label=hb-appstore&style=flat-square)
 ![](https://img.shields.io/github/v/release/ITotalJustice/sys-patch?color=pink&label=sys-patch&style=flat-square)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 content
 =====
