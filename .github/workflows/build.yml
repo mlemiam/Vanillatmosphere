@@ -21,29 +21,48 @@ jobs:
         run: pip install -r requirement.txt
 
       - name: execute script
-        run: python build.py
+        run: python download.py
 
       - name: copy configs
-        run: cp -r configs/* download/
+        run: cp -r configs/* artifact/
 
       - name: edit boot.ini
         run: |
-          find download/ -name 'hekate_ctcaer_*.bin' -exec basename {} \; | 
-          xargs -I{} sed -i 's/<payload>/{}/g' download/boot.ini
+          find artifact/ -name 'hekate_ctcaer_*.bin' -exec basename {} \; | 
+          xargs -I{} sed -i 's/<payload>/{}/g' artifact/boot.ini
       
       - name: prepare payload
         run: |
-          find download/ -name 'hekate_ctcaer_*.bin' -exec basename {} \; | 
-          xargs -I{} cp download/{} scripts/payload.bin
+          find artifact/ -name 'hekate_ctcaer_*.bin' -exec basename {} \; | 
+          xargs -I{} cp artifact/{} scripts/payload.bin
 
       - name: build boot.dat
-        run: python scripts/tx_custom_boot.py scripts/payload.bin download/boot.dat
+        run: python scripts/tx_custom_boot.py scripts/payload.bin artifact/boot.dat
 
       - name: delete shits
-        run: rm -rf download/switch/.overlays  
+        run: rm -rf artifact/switch/.overlays
+      
+      - name: duplicate
+        run: cp -r artifact/ artifact-legacy/
+
+      - name: remove sys-patch
+        run: rm -rf artifact-legacy/atmosphere/contents/420000000000000B/
+      
+      - name: download sigpatches
+        run: wget https://sigmapatches.coomer.party/sigpatches.zip
+      
+      - name: extract sigpatches
+        run: unzip sigpatches.zip -d artifact-legacy/
       
       - name: upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: pack-artifact
-          path: download
+          name: artifact-syspatches
+          path: artifact
+
+      - name: upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+            name: artifact-sigpatches
+            path: artifact-legacy
+          
