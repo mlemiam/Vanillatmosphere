@@ -46,7 +46,10 @@ jobs:
         run: cp -r artifact/ artifact-legacy/
 
       - name: remove sys-patch
-        run: rm -rf artifact-legacy/atmosphere/contents/420000000000000B/
+        run: rm -rf artifact-legacy/atmosphere/contents/420000000000000B/ artifact-legacy/config/
+        
+      - name: edit boot entry
+        run: sed -i 's/^\s*;\(.*\)$/\1/' artifact-legacy/bootloader/hekate_ipl.ini
       
       - name: download sigpatches
         run: wget https://sigmapatches.coomer.party/sigpatches.zip
