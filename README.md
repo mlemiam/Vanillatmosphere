@@ -9,7 +9,7 @@ I was tired of seeing so-called "vanilla" packs that often contained a lot of ho
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-content
+Content
 =====
 **latest** version of :
 - [Atmosphere-NX /
@@ -33,10 +33,10 @@ Versions
 =====
 | Official firmware | Custom firmware | Downloads | Changelogs |
 | ------------------|-----------------| ----------| ---------- |
-| 12.0.0 - 16.0.3  | Vanillatmosphere 1.5.4 |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.5.4)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.5.4) |
-| 12.0.0 - 16.0.3  | Vanillatmosphere 1.5.3 |[Download](https://github.com/pinokaille/Vanillatmosphere/releases/download/1.5.3/Atmosphere.1.5.3.Hekate.6.0.4.zip)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.5.3) |
+| 1.0.0 - 16.0.3  | Vanillatmosphere 1.5.4 |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.5.4)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.5.4) |
+| 1.0.0 - 16.0.3  | Vanillatmosphere 1.5.3 |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.5.3-update)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.5.3) |
 
-credit
+Credit
 =====
 thanks to [@fortheusers](https://github.com/fortheusers) [@CTCaer](https://github.com/CTCaer) [@Atmosphere-NX](https://github.com/Atmosphere-NX) [@ITotalJustice](https://github.com/ITotalJustice)
 
