@@ -2,7 +2,10 @@ name: Vanillatmosphere build
 
 on:
   schedule:
-    - cron: "*/1 * * * *"
+    - cron: '*/30 * * * *'
+  push:
+    branches:
+      - main
 
 jobs:
   build:
