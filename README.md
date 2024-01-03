@@ -11,7 +11,6 @@ I was tired of seeing so-called "vanilla" packs that often contained a lot of ho
 
 Content
 =====
-**latest** version of :
 - [Atmosphere-NX /
 Atmosphere](https://github.com/Atmosphere-NX/Atmosphere)
   * 90DNS
