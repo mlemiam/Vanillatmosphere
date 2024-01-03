@@ -1,6 +1,6 @@
 ![Super cool logo](https://github.com/pinokaille/Vanillatmosphere/blob/main/assets/banner.png?raw=true)
 
-I was tired of seeing so-called "vanilla" packs that often contained a lot of homebrew with unmaintained configurations so I made mine
+I was tired of seeing so-called "vanilla" packs that often contained a lot of homebrew with unmaintained configurations so I made mine without extras things like logo, homebrew and outdated configs lol
 
 ![](https://img.shields.io/github/v/release/Atmosphere-NX/Atmosphere?color=pink&label=atmosphere&style=flat-square)
 ![](https://img.shields.io/github/v/release/CTCaer/Hekate?color=pink&label=hekate&style=flat-square)
