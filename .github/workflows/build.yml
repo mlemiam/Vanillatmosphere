@@ -54,7 +54,7 @@ jobs:
         run: sed -i 's/^\s*;\(.*\)$/\1/' artifact-legacy/bootloader/hekate_ipl.ini
       
       - name: download sigpatches
-        run: wget https://sigmapatches.coomer.party/sigpatches.zip
+        run: wget https://sigmapatches.su/sigpatches.zip
       
       - name: extract sigpatches
         run: unzip sigpatches.zip -d artifact-legacy/
