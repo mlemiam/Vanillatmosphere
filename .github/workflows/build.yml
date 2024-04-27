@@ -1,8 +1,8 @@
 name: Vanillatmosphere build
 
 on:
-  schedule:
-    - cron: '*/120 * * * *'
+  #schedule:
+  #  - cron: '*/120 * * * *'
   push:
     branches:
       - main
