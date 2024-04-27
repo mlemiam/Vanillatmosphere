@@ -16,12 +16,6 @@ repos = [
         "local_file_name": "fusee.bin",
     },
     {
-        "owner": "ITotalJustice",
-        "repo": "sys-patch",
-        "file_pattern": r"^sys-patch\.zip$",
-        "local_file_name": "sys-patch.zip",
-    },
-    {
         "owner": "CTCaer",
         "repo": "hekate",
         "file_pattern": r"^hekate_ctcaer_[0-9]+\.[0-9]+\.[0-9]+_Nyx_[0-9]+\.[0-9]+\.[0-9]+(_v2)?\.zip$",
