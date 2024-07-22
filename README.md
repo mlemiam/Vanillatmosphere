@@ -1,5 +1,3 @@
-# FUCK NINTENDO
-
 ![Super cool logo](https://github.com/pinokaille/Vanillatmosphere/blob/main/assets/banner.png?raw=true)
 
 I was tired of seeing so-called "vanilla" packs that often contained a lot of homebrew with unmaintained configurations so I made mine without extras things like logo, homebrew and outdated configs lol
@@ -7,7 +5,7 @@ I was tired of seeing so-called "vanilla" packs that often contained a lot of ho
 ![](https://img.shields.io/github/v/release/Atmosphere-NX/Atmosphere?color=pink&label=atmosphere&style=flat-square)
 ![](https://img.shields.io/github/v/release/CTCaer/Hekate?color=pink&label=hekate&style=flat-square)
 ![](https://img.shields.io/github/v/release/fortheusers/hb-appstore?color=pink&label=hb-appstore&style=flat-square)
-![](https://img.shields.io/github/v/release/ITotalJustice/sys-patch?color=pink&label=sys-patch&style=flat-square)
+![](https://img.shields.io/github/v/release/impeeza/sys-patch?color=pink&label=sys-patch&style=flat-square)
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
