@@ -27,6 +27,12 @@ repos = [
         "file_pattern": r"^switch-extracttosd\.zip$",
         "local_file_name": "hb-appstore.zip",
     },
+    {
+        "owner": "ITotalJustice",
+        "repo": "sys-patch",
+        "file_pattern": r"^sys-patch-\d+\.\d+\.\d+-[a-zA-Z0-9]+\.zip$",
+        "local_file_name": "sys-patch.zip",
+    },
 ]
 
 if not os.path.exists(download_folder):
