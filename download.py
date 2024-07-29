@@ -30,7 +30,7 @@ repos = [
     {
         "owner": "ITotalJustice",
         "repo": "sys-patch",
-        "file_pattern": r"^sys-patch-\d+\.\d+\.\d+-[a-zA-Z0-9]+\.zip$",
+        "file_pattern": r"^sys-patch-\d+\.\d+\.\d+-[a-f0-9]+\.zip$",
         "local_file_name": "sys-patch.zip",
     },
 ]
