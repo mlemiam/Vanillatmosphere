@@ -28,7 +28,7 @@ repos = [
         "local_file_name": "hb-appstore.zip",
     },
     {
-        "owner": "ITotalJustice",
+        "owner": "impeeza",
         "repo": "sys-patch",
         "file_pattern": r"^sys-patch-\d+\.\d+\.\d+-[a-f0-9]+\.zip$",
         "local_file_name": "sys-patch.zip",
