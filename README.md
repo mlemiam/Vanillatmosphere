@@ -16,7 +16,7 @@ Atmosphere](https://github.com/Atmosphere-NX/Atmosphere)
   * 90DNS
   * system_settings.ini (disable cheats by default)
   * exosphere.ini (incognito aka blank prod)
-  * ~~ips patches (sigpatches)~~ **replaced by [sys-patch](https://github.com/ITotalJustice/sys-patch) in future**
+  * ~~ips patches (sigpatches)~~ **replaced by [sys-patch](https://github.com/impeeza/sys-patch) in future**
 - [CTCaer /
 hekate](https://github.com/CTCaer/hekate)
   * boot entries (sysnand or emunand)
