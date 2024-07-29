@@ -22,7 +22,7 @@ hekate](https://github.com/CTCaer/hekate)
   * boot entries (sysnand or emunand)
   * boot.ini
   * boot.dat for modchips (build with [this](https://github.com/mlemiam/Vanillatmosphere/blob/main/scripts/tx_custom_boot.py))
-- [impeeza/sys-patch](https://github.com/impeeza/sys-patch)
+- [impeeza/sys-patch](https://github.com/impeeza/sys-patch) 
   * config.ini
 - [configs](https://github.com/pinokaille/Vanillatmosphere/tree/main/configs) 👆
 - [fortheusers /
@@ -39,5 +39,4 @@ Versions
 
 Credit
 =====
-thanks to [@fortheusers](https://github.com/fortheusers) [@CTCaer](https://github.com/CTCaer) [@Atmosphere-NX](https://github.com/Atmosphere-NX) [@ITotalJustice](https://github.com/ITotalJustice) [Sigmapatches](https://sigmapatches.coomer.party/)
-
+thanks to [@fortheusers](https://github.com/fortheusers) [@CTCaer](https://github.com/CTCaer) [@Atmosphere-NX](https://github.com/Atmosphere-NX) [@ITotalJustice](https://github.com/ITotalJustice) [Sigmapatches](https://sigmapatches.coomer.party/) [impeeza](https://github.com/impeeza/)
