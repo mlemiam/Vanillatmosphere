@@ -120,6 +120,7 @@ def download_and_process_assets(repo, folder):
     else:
         print(f"[x] No assets found in the latest release for {owner}/{repo_name}")
 
+
 def main():
     download_folder = "artifact"
     repos = load_repos('repos.json')
