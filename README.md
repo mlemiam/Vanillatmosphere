@@ -40,4 +40,5 @@ Versions
 
 Credit
 =====
-thanks to [@fortheusers](https://github.com/fortheusers) [@CTCaer](https://github.com/CTCaer) [@Atmosphere-NX](https://github.com/Atmosphere-NX) [@ITotalJustice](https://github.com/ITotalJustice) [Sigmapatches](https://sigmapatches.coomer.party/) [impeeza](https://github.com/impeeza/)
+thanks to [@fortheusers](https://github.com/fortheusers) [@CTCaer](https://github.com/CTCaer) [@Atmosphere-NX](https://github.com/Atmosphere-NX) [@ITotalJustice](https://github.com/ITotalJustice) [@impeeza](https://github.com/impeeza/)
+ [Sigmapatches](https://sigmapatches.coomer.party/) 
