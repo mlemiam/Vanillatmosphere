@@ -1,6 +1,6 @@
 __pycache__/
 *.py[cod]
 venv/
-download
 *.bin
 *.dat
+artifact
