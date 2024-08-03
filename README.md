@@ -32,6 +32,7 @@ Versions
 =====
 | Official firmware | Custom firmware | Downloads | Changelogs |
 | ------------------|-----------------| ----------| ---------- |
+| 1.0.0 - 18.1.0  | Vanillatmosphere 1.7.1 |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.7.1)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.7.1) |
 | 1.0.0 - 17.0.0  | Vanillatmosphere 1.6.2 |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.6.2)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.6.2) |
 | 1.0.0 - 16.1.0  | Vanillatmosphere 1.5.5 |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.5.5)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.5.5) |
 | 1.0.0 - 16.0.3  | Vanillatmosphere 1.5.4 |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.5.4)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.5.4) |
