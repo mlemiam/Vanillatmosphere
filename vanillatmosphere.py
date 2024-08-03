@@ -1,6 +1,6 @@
 import requests, re, os, zipfile, shutil, json, time
 
-GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
+GITHUB_TOKEN = os.getenv('API_TOKEN')
 
 def get_github_response(url):
     headers = {'Authorization': f'token {GITHUB_TOKEN}'}
