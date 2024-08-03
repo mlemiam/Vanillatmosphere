@@ -1,8 +1,8 @@
 name: Vanillatmosphere build
 
 on:
-  #schedule:
-  #  - cron: '*/120 * * * *'
+  schedule:
+    - cron: '*/120 * * * *'
   push:
     branches:
       - main
@@ -13,17 +13,17 @@ jobs:
 
     steps:
       - name: check
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: install python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.11
+          python-version: 3.12
       - name: install requirements
         run: pip install -r requirement.txt
 
       - name: execute script
-        run: python download.py
+        run: python vanillatmosphere.py
 
       - name: copy configs
         run: cp -r configs/* artifact/
@@ -60,13 +60,13 @@ jobs:
         run: unzip sigpatches.zip -d artifact-legacy/
       
       - name: upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: artifact-syspatches
           path: artifact
 
       - name: upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
             name: artifact-sigpatches
             path: artifact-legacy
