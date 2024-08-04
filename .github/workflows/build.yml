@@ -28,39 +28,39 @@ jobs:
         env:
           API_TOKEN: ${{ secrets.API_TOKEN }}
 
-      - name: copy configs
-        run: cp -r configs/* artifact/
+      # - name: copy configs
+      #   run: cp -r configs/* artifact/
 
-      - name: edit boot.ini
-        run: |
-          find artifact/ -name 'hekate_ctcaer_*.bin' -exec basename {} \; | 
-          xargs -I{} sed -i 's/<payload>/{}/g' artifact/boot.ini
+      # - name: edit boot.ini
+      #   run: |
+      #     find artifact/ -name 'hekate_ctcaer_*.bin' -exec basename {} \; | 
+      #     xargs -I{} sed -i 's/<payload>/{}/g' artifact/boot.ini
       
-      - name: prepare payload
-        run: |
-          find artifact/ -name 'hekate_ctcaer_*.bin' -exec basename {} \; | 
-          xargs -I{} cp artifact/{} scripts/payload.bin
+      # - name: prepare payload
+      #   run: |
+      #     find artifact/ -name 'hekate_ctcaer_*.bin' -exec basename {} \; | 
+      #     xargs -I{} cp artifact/{} scripts/payload.bin
 
-      - name: build boot.dat
-        run: python scripts/tx_custom_boot.py scripts/payload.bin artifact/boot.dat
+      # - name: build boot.dat
+      #   run: python scripts/tx_custom_boot.py scripts/payload.bin artifact/boot.dat
 
-      - name: delete shits
-        run: rm -rf artifact/switch/.overlays
+      # - name: delete shits
+      #   run: rm -rf artifact/switch/.overlays
       
-      - name: duplicate
-        run: cp -r artifact/ artifact-legacy/
+      # - name: duplicate
+      #   run: cp -r artifact/ artifact-legacy/
 
-      - name: remove sys-patch
-        run: rm -rf artifact-legacy/atmosphere/contents/420000000000000B/ artifact-legacy/config/
+      # - name: remove sys-patch
+      #   run: rm -rf artifact-legacy/atmosphere/contents/420000000000000B/ artifact-legacy/config/
         
-      - name: edit boot entry
-        run: sed -i 's/^\s*;\(.*\)$/\1/' artifact-legacy/bootloader/hekate_ipl.ini
+      # - name: edit boot entry
+      #   run: sed -i 's/^\s*;\(.*\)$/\1/' artifact-legacy/bootloader/hekate_ipl.ini
       
-      - name: download sigpatches
-        run: wget https://sigmapatches.su/sigpatches.zip
+      # - name: download sigpatches
+      #   run: wget https://sigmapatches.su/sigpatches.zip
       
-      - name: extract sigpatches
-        run: unzip sigpatches.zip -d artifact-legacy/
+      # - name: extract sigpatches
+      #   run: unzip sigpatches.zip -d artifact-legacy/
       
       - name: upload artifact
         uses: actions/upload-artifact@v4

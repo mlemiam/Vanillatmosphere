@@ -1,4 +1,5 @@
-import requests, re, os, zipfile, shutil, json, time
+import requests, re, os, zipfile, shutil, json, time, pyfiglet, glob
+from colorama import Fore, init
 
 GITHUB_TOKEN = os.getenv('API_TOKEN')
 
@@ -23,24 +24,26 @@ def load_repos(file_path):
             return json.load(file)
     except FileNotFoundError:
         print(f"[x] {file_path} doesn't exist.")
-        return []
+        return [] 
     except json.JSONDecodeError:
         print(f"[x] JSON decoding error in {file_path} file.")
         return []
 
-def prepare_download_folder(folder):
-    if not os.path.exists(folder):
+def prepare_download_folder():
+    folders = ['artifact', 'artifact-legacy']
+    for folder in folders:
+     if not os.path.exists(folder):
         os.makedirs(folder)
-    else:
-        for filename in os.listdir(folder):
-            file_path = os.path.join(folder, filename)
-            try:
-                if os.path.isfile(file_path) or os.path.islink(file_path):
-                    os.unlink(file_path)
-                elif os.path.isdir(file_path):
-                    shutil.rmtree(file_path)
-            except Exception as e:
-                print(f"[x] Error when deleting {file_path}: {e}")
+     else:
+            for filename in os.listdir(folder):
+                file_path = os.path.join(folder, filename)
+                try:
+                    if os.path.isfile(file_path) or os.path.islink(file_path):
+                        os.unlink(file_path)
+                    elif os.path.isdir(file_path):
+                        shutil.rmtree(file_path)
+                except Exception as e:
+                    print(f"[x] Error when deleting {file_path}: {e}")
 
 def extract_zip(file_path, extract_to_folder):
     try:
@@ -120,15 +123,96 @@ def download_and_process_assets(repo, folder):
     else:
         print(f"[x] No assets found in the latest release for {owner}/{repo_name}")
 
+def make_the_packs():
+    
+    print(Fore.MAGENTA + 'Copying configs files -> artifact')
+    for item in glob.glob(os.path.join('configs', '*')):
+        source_path = item
+        destination_path = os.path.join('artifact', os.path.basename(item))
+
+        if os.path.isdir(source_path):
+            shutil.copytree(source_path, destination_path, dirs_exist_ok=True)
+        else:
+            shutil.copy2(source_path, destination_path)
+
+    print(Fore.MAGENTA + "Editing boot.ini")
+    boot_ini_path = 'artifact/boot.ini'
+
+    with open(boot_ini_path, 'r') as file:
+        content = file.read()
+
+    for file_path in glob.glob('artifact/hekate_ctcaer_*.bin'):
+        file_name = os.path.basename(file_path)
+        content = content.replace('<payload>', file_name)
+
+    with open(boot_ini_path, 'w') as file:
+        file.write(content)
+
+    print(Fore.MAGENTA + "Making boot.dat")
+    shutil.copy(glob.glob('artifact/hekate_ctcaer_*.bin')[0], 'scripts/payload.bin')
+
+    os.system("python scripts/tx_custom_boot.py scripts/payload.bin artifact/boot.dat")
+    print(Fore.MAGENTA + "removing syspatch and somes shits and making a copy of artifact -> artifact-legacy")
+    os.remove('scripts/payload.bin')
+
+    shutil.rmtree('artifact/switch/.overlays')
+    shutil.copytree('artifact', 'artifact-legacy', dirs_exist_ok=True)
+
+    sys_patch = [
+        'artifact-legacy/atmosphere/contents/420000000000000B/',
+        'artifact-legacy/config/'
+    ]
+
+    for path in sys_patch:
+        shutil.rmtree(path)
+    
+    print(Fore.MAGENTA + "Editing hekate_ipl.ini to enable sigpatches patching")
+    with open('artifact-legacy/bootloader/hekate_ipl.ini', 'r') as file:
+        lines = file.readlines()
+
+    modified_lines = []
+    for line in lines:
+        modified_line = re.sub(r'^\s*;\s*(.*)$', r'\1', line)
+        modified_lines.append(modified_line)
+
+    with open('artifact-legacy/bootloader/hekate_ipl.ini', 'w') as file:
+        file.writelines(modified_lines)
+
+    print(Fore.MAGENTA + "Downloading sigpatches from trusted source :3")
+
+    response = requests.get('https://sigmapatches.su/sigpatches.zip', stream=True)
+    if response.status_code == 200:
+        with open('sigpatches.zip', 'wb') as file:
+            for chunk in response.iter_content(chunk_size=8192):
+                file.write(chunk)
+    else:
+        print(f'[x] Failed to download sigpatches :  {response.status_code}')
+        exit()
+    print(Fore.MAGENTA + "extracting sigpatches.zip to -> artifact-legacy")
+    with zipfile.ZipFile("sigpatches.zip","r") as zip_ref:
+        zip_ref.extractall("artifact-legacy/")
+
+    os.remove('sigpatches.zip')
 
 def main():
-    download_folder = "artifact"
+    init(autoreset=True)
     repos = load_repos('repos.json')
+    
+    font = pyfiglet.Figlet(font='big', width=100)
 
-    prepare_download_folder(download_folder)
+    print(Fore.CYAN+ font.renderText("Vanillatmosphere"))
 
+    print(Fore.YELLOW + '[!] Preparing the download folder')
+    prepare_download_folder()
+    print(Fore.GREEN + '[*] Done.')
+
+    print(Fore.YELLOW + '[!] Downloading all the files needed to make the pack')
     for repo in repos:
-        download_and_process_assets(repo, download_folder)
+        download_and_process_assets(repo, "artifact")
+    print(Fore.GREEN + '[*] Done.')
+    print(Fore.YELLOW + '[!] Finishing the process by making 2 separate folders, artifact that use syspatch and artifact-legacy that use sigpatches.')
+    make_the_packs()
+    print(Fore.GREEN + '[*] Done. Thank you for using my script')
 
 if __name__ == "__main__":
     main()
