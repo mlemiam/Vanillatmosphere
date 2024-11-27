@@ -155,7 +155,6 @@ def make_the_packs():
     print(Fore.MAGENTA + "removing syspatch and somes shits and making a copy of artifact -> artifact-legacy")
     os.remove('scripts/payload.bin')
 
-    # shutil.rmtree('artifact/switch/.overlays')
     shutil.copytree('artifact', 'artifact-legacy', dirs_exist_ok=True)
 
     sys_patch = [
