@@ -9,6 +9,10 @@ I was tired of seeing so-called "vanilla" packs that often contained a lot of ho
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
+[!NOTE]
+since version 1.8.0 of atmosphere sigpatches no longer work and are replaced by the sys-patch module made by [@impeeza](https://github.com/impeeza/) originally created by [@ITotalJustice](https://github.com/ITotalJustice)
+
+
 Content
 =====
 - [Atmosphere-NX /
@@ -16,7 +20,7 @@ Atmosphere](https://github.com/Atmosphere-NX/Atmosphere)
   * 90DNS
   * system_settings.ini (disable cheats by default)
   * exosphere.ini (incognito aka blank prod)
-  * ~~ips patches (sigpatches)~~ **replaced by [sys-patch](https://github.com/impeeza/sys-patch) in future**
+  * ~~ips patches (sigpatches)~~ **replaced by [sys-patch](https://github.com/impeeza/sys-patch) since [1.8.0](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.8.0-prerelease)**
 - [CTCaer /
 hekate](https://github.com/CTCaer/hekate)
   * boot entries (sysnand or emunand)
@@ -32,6 +36,7 @@ Versions
 =====
 | Official firmware | Custom firmware | Downloads | Changelogs |
 | ------------------|-----------------| ----------| ---------- |
+| 1.0.0 - 19.0.1  | Vanillatmosphere 1.8.0 (pre) |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.8.0-prerelease)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.8.0-prerelease) |
 | 1.0.0 - 18.1.0  | Vanillatmosphere 1.7.1 |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.7.1)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.7.1) |
 | 1.0.0 - 17.0.0  | Vanillatmosphere 1.6.2 |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.6.2)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.6.2) |
 | 1.0.0 - 16.1.0  | Vanillatmosphere 1.5.5 |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.5.5)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.5.5) |
@@ -41,4 +46,3 @@ Versions
 Credit
 =====
 thanks to [@fortheusers](https://github.com/fortheusers) [@CTCaer](https://github.com/CTCaer) [@Atmosphere-NX](https://github.com/Atmosphere-NX) [@ITotalJustice](https://github.com/ITotalJustice) [@impeeza](https://github.com/impeeza/)
- [Sigmapatches](https://sigmapatches.coomer.party/) 
