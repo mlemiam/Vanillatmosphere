@@ -26,7 +26,7 @@
     {
         "owner": "impeeza",
         "repo": "sys-patch",
-        "file_pattern": "^sys-patch-\\d+(\\.\\d+)*\\.zip$",
+        "file_pattern": "^sys-patch(?:-\\d+\\.\\d+\\.\\d+(?:-[a-f0-9]+)?)?\\.zip",
         "local_file_name": "sys-patch1.zip"
     }
 ]
