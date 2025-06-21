@@ -36,14 +36,14 @@ Versions
 =====
 | Official firmware | Custom firmware | Downloads | Changelogs |
 | ------------------|-----------------| ----------| ---------- |
-| 20.1.1   | Vanillatmosphere 1.9.1 |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.9.1)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.9.1) |
-| 20.0.1  | Vanillatmosphere 1.9.0 (pre) |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.9.0-prerelease)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.9.0-prerelease) |
-| 19.0.1  | Vanillatmosphere 1.8.0  |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.8.0-prerelease)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.8.0-prerelease) |
-| 18.1.0  | Vanillatmosphere 1.7.1 |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.7.1)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.7.1) |
-| 17.0.0  | Vanillatmosphere 1.6.2 |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.6.2)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.6.2) |
-| 16.1.0  | Vanillatmosphere 1.5.5 |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.5.5)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.5.5) |
-| 16.0.3  | Vanillatmosphere 1.5.4 |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.5.4)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.5.4) |
-| 16.0.3  | Vanillatmosphere 1.5.3 |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.5.3)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.5.3) |
+| Horizon 20.1.1  | Vanillatmosphere 1.9.1 |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.9.1)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.9.1) |
+| Horizon 20.0.1  | Vanillatmosphere 1.9.0 (pre) |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.9.0-prerelease)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.9.0-prerelease) |
+| Horizon 19.0.1  | Vanillatmosphere 1.8.0  |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.8.0-prerelease)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.8.0-prerelease) |
+| Horizon 18.1.0  | Vanillatmosphere 1.7.1 |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.7.1)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.7.1) |
+| Horizon 17.0.0  | Vanillatmosphere 1.6.2 |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.6.2)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.6.2) |
+| Horizon 16.1.0  | Vanillatmosphere 1.5.5 |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.5.5)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.5.5) |
+| Horizon 16.0.3  | Vanillatmosphere 1.5.4 |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.5.4)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.5.4) |
+| Horizon 16.0.3  | Vanillatmosphere 1.5.3 |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.5.3)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.5.3) |
 
 Credit
 =====
