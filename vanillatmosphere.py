@@ -4,8 +4,7 @@ from colorama import Fore, init
 GITHUB_TOKEN = os.getenv('API_TOKEN')
 
 def get_github_response(url):
-    headers = {'Authorization': f'token {GITHUB_TOKEN}'}
-    response = requests.get(url, headers=headers)
+    response = requests.get(url)
     
     if response.status_code == 403: 
         reset_time = int(response.headers.get('X-RateLimit-Reset', time.time() + 60))
@@ -13,7 +12,7 @@ def get_github_response(url):
         if wait_time > 0:
             print(f"[x] Rate limit exceeded. Waiting for {wait_time:.0f} seconds before retrying...")
             time.sleep(wait_time)
-            response = requests.get(url, headers=headers)
+            response = requests.get(url)
     
     response.raise_for_status()
     return response
@@ -153,7 +152,13 @@ def make_the_packs():
 
     os.system("python scripts/tx_custom_boot.py scripts/payload.bin artifact/boot.dat")
     print(Fore.MAGENTA + "removing shits....")
-    os.remove('scripts/payload.bin')
+    shitlist = [
+        'scripts/payload.bin',
+        'artifact/fusee.bin',
+        'artifact/hecate*'
+    ]
+    for shit in shitlist:
+        os.remove(shit)
 
 def main():
     init(autoreset=True)
