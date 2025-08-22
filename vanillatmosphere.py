@@ -154,8 +154,7 @@ def make_the_packs():
     print(Fore.MAGENTA + "removing shits....")
     shitlist = [
         'scripts/payload.bin',
-        'artifact/fusee.bin',
-        'artifact/hecate*'
+        'artifact/fusee.bin'
     ]
     for shit in shitlist:
         os.remove(shit)

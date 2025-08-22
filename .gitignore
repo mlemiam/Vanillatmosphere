@@ -5,3 +5,4 @@ venv/
 *.dat
 artifact
 artifact-legacy
+.idea
