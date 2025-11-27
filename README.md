@@ -9,6 +9,9 @@ I was tired of seeing so-called "vanilla" packs that often contained a lot of ho
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
+> [!WARNING]
+> I don't update releases very regularly because I don't use my Switch very much, so it sometimes takes me several weeks to notice updates. If you want to have the latest version available, feel free to use the automatic builds [here.](https://nightly.link/mlemiam/Vanillatmosphere/workflows/build/main/artifact-syspatches)
+
 > [!NOTE]
 > since version 1.8.0 of atmosphere sigpatches no longer work and are replaced by the sys-patch module made by [@impeeza](https://github.com/impeeza/) originally created by [@ITotalJustice](https://github.com/ITotalJustice)
 
