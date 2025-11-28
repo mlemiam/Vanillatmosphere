@@ -9,6 +9,9 @@ I was tired of seeing so-called "vanilla" packs that often contained a lot of ho
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
+> [!CAUTION]
+>To avoid being banned by Nintendo, you must create an Emunand, block Nintendo servers (already included in the pack), and hide the serial number (also included in the pack). This pack allows you to launch a sysnand system with sys-patch, as I myself am banned, but you must configure it if you do not want to be banned. [Click here for guide](https://switch.hacks.guide/)
+
 > [!WARNING]
 > I don't update releases very regularly because I don't use my Switch very much, so it sometimes takes me several weeks to notice updates. If you want to have the latest version available, feel free to use the automatic builds [here.](https://nightly.link/mlemiam/Vanillatmosphere/workflows/build/main/artifact-syspatches)
 
