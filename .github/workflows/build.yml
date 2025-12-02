@@ -13,12 +13,12 @@ jobs:
 
     steps:
       - name: check
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: install python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
-          python-version: 3.12
+          python-version: 3.13
       - name: install requirements
         run: pip install -r requirement.txt
 
@@ -29,7 +29,7 @@ jobs:
           API_TOKEN: ${{ secrets.API_TOKEN }}
 
       - name: upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: artifact-syspatches
           path: artifact
