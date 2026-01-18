@@ -42,6 +42,7 @@ Versions
 =====
 | Official firmware | Custom firmware | Downloads | Changelogs |
 | ------------------|-----------------| ----------| ---------- |
+| Horizon [21.2.0](https://switchbrew.org/wiki/21.2.0)  | Vanillatmosphere 1.10.2 |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.10.2)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.10.2) |
 | Horizon [21.1.0](https://switchbrew.org/wiki/21.1.0)  | Vanillatmosphere 1.10.1 |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.10.1)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.10.1) |
 | Horizon [21.0.0](https://switchbrew.org/wiki/21.0.0)  | Vanillatmosphere 1.10.0 (pre) |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.10.0-prerelease)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.10.0-prerelease) |
 | Horizon [20.5.0](https://switchbrew.org/wiki/20.5.0)  | Vanillatmosphere 1.9.5 |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.9.5)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.9.5) |
