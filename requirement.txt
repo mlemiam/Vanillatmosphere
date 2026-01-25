@@ -1,8 +1,5 @@
-certifi==2025.11.12
+certifi==2026.1.4
 charset-normalizer==3.4.4
-colorama==0.4.6
 idna==3.11
-pyfiglet==1.0.4
 requests==2.32.5
-urllib3==2.5.0
-
+urllib3==2.6.3

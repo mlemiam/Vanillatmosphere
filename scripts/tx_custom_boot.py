@@ -32,6 +32,8 @@ def pack_payload(file_path, output_file):
         boot.write(header)
         boot.write(stage2)
 
+    print("[*] boot.dat created")
+
 if __name__ == "__main__":
     if len(sys.argv) < 3:
         print("Usage: python tx_custom_boot.py <input_file> <output_file>")

@@ -1,8 +1,14 @@
-import requests, re, os, zipfile, shutil, json, time, pyfiglet, glob
-from colorama import Fore, init
+import requests, re, os, zipfile, shutil, json, time, glob
+from scripts.tx_custom_boot import pack_payload
 
 def get_github_response(url):
-    response = requests.get(url)
+    token = os.getenv('API_TOKEN')
+    if os.getenv("GITHUB_ACTIONS") == "true":
+        headers = {'Authorization': f'token {token}'}
+    else:
+        headers = {}
+
+    response = requests.get(url, headers=headers)
     
     if response.status_code == 403: 
         reset_time = int(response.headers.get('X-RateLimit-Reset', time.time() + 60))
@@ -10,7 +16,7 @@ def get_github_response(url):
         if wait_time > 0:
             print(f"[x] Rate limit exceeded. Waiting for {wait_time:.0f} seconds before retrying...")
             time.sleep(wait_time)
-            response = requests.get(url)
+            response = requests.get(url, headers=headers)
     
     response.raise_for_status()
     return response
@@ -26,7 +32,7 @@ def load_repos(file_path):
         print(f"[x] JSON decoding error in {file_path} file.")
         return []
 
-def prepare_download_folder():
+def make_download_folder():
     folder = "artifact"
     if not os.path.exists(folder):
         os.makedirs(folder)
@@ -38,14 +44,14 @@ def prepare_download_folder():
                     os.unlink(file_path)
                 elif os.path.isdir(file_path):
                     shutil.rmtree(file_path)
-            except Exception as e:
-                print(f"[x] Error when deleting {file_path}: {e}")
+            except Exception as error:
+                print(f"[x] Error when deleting {file_path}: {error}")
 
 def extract_zip(file_path, extract_to_folder):
     try:
         with zipfile.ZipFile(file_path, "r") as zip_ref:
             zip_ref.extractall(extract_to_folder)
-        print(f"Extracted {file_path} to {extract_to_folder}")
+        print(f"[*] Extracted {file_path} to {extract_to_folder}")
         return [os.path.join(extract_to_folder, name) for name in zip_ref.namelist()]
     except zipfile.BadZipFile:
         print(f"[x] {file_path} is not a valid zip file.")
@@ -54,12 +60,11 @@ def extract_zip(file_path, extract_to_folder):
         print(f"[x] Error extracting {file_path}: {e}")
         return []
 
-def download_and_process_assets(repo):
+def download_files(repo):
     folder = "artifact"
     owner = repo["owner"]
     repo_name = repo["repo"]
     file_pattern = repo["file_pattern"]
-    local_file_name = repo["local_file_name"]
 
     url = f"https://api.github.com/repos/{owner}/{repo_name}/releases"
     response = get_github_response(url)
@@ -84,7 +89,7 @@ def download_and_process_assets(repo):
             asset_url = asset["browser_download_url"]
 
             if re.search(file_pattern, asset_name):
-                print(f"Downloading -> {asset_name}")
+                print(f"[Downloading] -> {asset_name}")
 
                 response = get_github_response(asset_url)
 
@@ -98,7 +103,7 @@ def download_and_process_assets(repo):
                     file.write(response.content)
 
                 if asset_name.endswith(".zip"):
-                    print(f"{asset_name} -> Extracting")
+                    print(f"[Extracting] ->/<- {asset_name} ")
                     extracted_files = extract_zip(destination_path, folder)
                     
                     for extracted_file in extracted_files:
@@ -122,7 +127,7 @@ def download_and_process_assets(repo):
 
 def make_the_packs():
     
-    print(Fore.MAGENTA + 'Copying configs files -> artifact')
+    print('Copying configs files -> artifact')
     for item in glob.glob(os.path.join('configs', '*')):
         source_path = item
         destination_path = os.path.join('artifact', os.path.basename(item))
@@ -132,7 +137,7 @@ def make_the_packs():
         else:
             shutil.copy2(source_path, destination_path)
 
-    print(Fore.MAGENTA + "Editing boot.ini")
+    print("Editing boot.ini")
     boot_ini_path = 'artifact/boot.ini'
 
     with open(boot_ini_path, 'r') as file:
@@ -145,32 +150,6 @@ def make_the_packs():
     with open(boot_ini_path, 'w') as file:
         file.write(content)
 
-    print(Fore.MAGENTA + "Making boot.dat")
     shutil.copy(glob.glob('artifact/hekate_ctcaer_*.bin')[0], 'scripts/payload.bin')
-
-    os.system("python scripts/tx_custom_boot.py scripts/payload.bin artifact/boot.dat")
-    print(Fore.MAGENTA + "removing shits....")
+    pack_payload(file_path="scripts/payload.bin",output_file="artifact/boot.dat")
     os.remove('scripts/payload.bin')
-
-def main():
-    init(autoreset=True)
-    repos = load_repos('repos.json')
-    
-    font = pyfiglet.Figlet(font='big', width=100)
-
-    print(Fore.CYAN+ font.renderText("Vanillatmosphere"))
-
-    print(Fore.YELLOW + '[!] Preparing the download folder')
-    prepare_download_folder()
-    print(Fore.GREEN + '[*] Done.')
-
-    print(Fore.YELLOW + '[!] Downloading all the files needed to make the pack')
-    for repo in repos:
-        download_and_process_assets(repo)
-    print(Fore.GREEN + '[*] Done.')
-    print(Fore.YELLOW + '[!] Finishing the process by making boot.dat and cleaning some shit')
-    make_the_packs()
-    print(Fore.GREEN + '[*] Done. Thank you for using my script')
-
-if __name__ == "__main__":
-    main()
