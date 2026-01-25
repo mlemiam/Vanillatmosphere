@@ -58,6 +58,20 @@ Versions
 | Horizon [16.0.3](https://switchbrew.org/wiki/16.0.3)  | Vanillatmosphere 1.5.4 |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.5.4)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.5.4) |
 | Horizon [16.0.3](https://switchbrew.org/wiki/16.0.3)  | Vanillatmosphere 1.5.3 |[Download](https://github.com/mlemiam/Vanillatmosphere/releases/tag/1.5.3)| [changelog](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.5.3) |
 
+
+Local
+=====
+If you want to use the program locally on your computer, you can simply install the dependencies (requirement.txt) and run the program as follows:
+```
+python vanillatmosphere.py
+```
+The local version does not use a GitHub API key, so you are limited in terms of requests. Later, I will add a way to add an API key in the local version.
+
+You can also use the tx_custom_boot.py program, which converts a payload into a .dat file for use in an sx pro.
+```
+python tx_custom_boot.py <input_file> <output_file>
+```
+
 Credit
 =====
 thanks to [@fortheusers](https://github.com/fortheusers) [@CTCaer](https://github.com/CTCaer) [@Atmosphere-NX](https://github.com/Atmosphere-NX) [@ITotalJustice](https://github.com/ITotalJustice) [@impeeza](https://github.com/impeeza/)
