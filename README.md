@@ -65,7 +65,7 @@ If you want to use the program locally on your computer, you can simply install 
 ```
 python vanillatmosphere.py
 ```
-The local version does not use a GitHub API key, so you are limited in terms of requests. Later, I will add a way to add an API key in the local version.
+The local version does not use a GitHub API key by default, if you want to use it, export your token as API_TOKEN
 
 You can also use the tx_custom_boot.py program, which converts a payload into a .dat file for use in an sx pro.
 ```
