@@ -3,7 +3,7 @@ from scripts.tx_custom_boot import pack_payload
 
 def get_github_response(url):
     token = os.getenv('API_TOKEN')
-    if os.getenv("GITHUB_ACTIONS") == "true":
+    if token:
         headers = {'Authorization': f'token {token}'}
     else:
         headers = {}
@@ -21,6 +21,7 @@ def get_github_response(url):
     response.raise_for_status()
     return response
 
+
 def load_repos(file_path):
     try:
         with open(file_path, 'r') as file:
@@ -32,10 +33,17 @@ def load_repos(file_path):
         print(f"[x] JSON decoding error in {file_path} file.")
         return []
 
-def make_download_folder():
+def create_download_folder():
     folder = "artifact"
     if not os.path.exists(folder):
-        os.makedirs(folder)
+        try:
+            os.makedirs(folder)
+        except PermissionError:
+            print(f"[x] Permission Denied, unable to create : {folder}")
+            raise
+        except Exception as error: 
+            print(f"[x] An error occured : {error}")
+            raise
     else:
         for filename in os.listdir(folder):
             file_path = os.path.join(folder, filename)
@@ -46,6 +54,7 @@ def make_download_folder():
                     shutil.rmtree(file_path)
             except Exception as error:
                 print(f"[x] Error when deleting {file_path}: {error}")
+                raise
 
 def extract_zip(file_path, extract_to_folder):
     try:
